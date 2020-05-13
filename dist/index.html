@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Covid-19 Global Statistic</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-light bg-light ml-auto">
+            <div class="ml-3">
+                <app-title></app-title>
+            </div>
+        </nav>
+    </header>
+    <div class="card-group">
+        <div class="card">
+            <div class="card-header text-center">
+                <h5>Daily Summary</h5>
+            </div>
+            <div class="card-body text-center">
+                <p id="dialy-report" class="bg-warning"></p>
+                <p> <button id="prev-day" class="btn btn-light"><img
+                            src="https://img.icons8.com/dotty/32/000000/chevron-left.png" /></button>
+                    <span class="bg-light"> <i><b>Confirmed</b></i> </span>
+                    <button id="next-day" class="btn btn-light"><img
+                            src="https://img.icons8.com/dotty/32/000000/chevron-right.png" /></button>
+                </p>
+                <div class="d-flex flex-row flex-wrap bd-highlight mb-3 justify-content-center">
+                    <div class="p-2 bd-highlight">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Total</h5>
+                                <p class="card-text" id="dialy-confirmed-total"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-2 bd-highlight">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Mainland China</h5>
+                                <p class="card-text" id="dialy-confirmed-china"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-2 bd-highlight">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Outside China</h5>
+                                <p class="card-text" id="dialy-confirmed-outside"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p><span class="bg-light"> <i><b>Deaths</b></i> </span></p>
+                <div class="d-flex flex-row flex-wrap bd-highlight mb-3 justify-content-center">
+                    <div class="p-2 bd-highlight">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Total</h5>
+                                <p class="card-text" id="dialy-death-total"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-2 bd-highlight">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Mainland China</h5>
+                                <p class="card-text" id="dialy-death-china"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-2 bd-highlight">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Outside China</h5>
+                                <p class="card-text" id="dialy-death-outside"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header text-center">
+                <h5>Global Summary</h5>
+            </div>
+            <div class="card-body text-center">
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
+                    See Infographic
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Covid-19 Global Statistics</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <img class="img-fluid" src="https://covid19.mathdro.id/api/og" alt="" style="max-height: 400px;">
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex flex-row flex-wrap justify-content-center text-center">
+                    <div class="p-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Confirmed</h5>
+                                <p class="card-text" id="global-confirmed">1</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Deaths</h5>
+                                <p class="card-text" id="global-deaths">1</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Recovered</h5>
+                                <p class="card-text" id="global-recovered">1</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header text-center">
+                <h5>Search Covid-19 Statistic in Other Countries</h5>
+            </div>
+            <div class="card-body">
+                <select id="country-list">
+                </select>
+                <button class="btn btn-primary mb-0" id="search-country">Search</button>
+                <div id="search-result" class="align-self-start text-center">
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <footer class="footer-copyright text-center">
+        <p><b>Made by: Yehezkiel Gunawan </b></p>
+        <p>(Using Bootstrap 4)</p>
+    </footer>
+<script type="text/javascript" src="bundle.js"></script></body>
+
+</html>
